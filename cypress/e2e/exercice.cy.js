@@ -20,10 +20,16 @@ describe("Premier Exo", () => {
       cy.url().should("include", "/home");
     });
 
+    it("Oublie du nom d'utilisateur", () => {
+      cy.get('[data-test="password-login"]').type("cyprès-geek").should("have.value", "cyprès-geek");
+      cy.get('[data-test="submit-login"]').should("have.text", "Se Connecter").click();
+      cy.get(".error-message").should("be.visible").and("have.text", "Veuillez renseigner votre nom d'utilisateur");
+    });
+
     it("Oublie de mot de passe", () => {
         cy.get('[data-test="username-login"]').type("utilisateur_connu").should("have.value", "utilisateur_connu");
         cy.get('[data-test="submit-login"]').should("have.text", "Se Connecter").click();
-        cy.get(".error-message").should("be.visible").and("have.text", "Veuillez renseigner votre mot de passe")
+        cy.get(".error-message").should("be.visible").and("have.text", "Veuillez renseigner votre mot de passe");
     });
 
     it("Mot de passe erroné", () => {
