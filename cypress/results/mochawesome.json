@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-23T13:19:15.893Z",
+    "end": "2024-05-23T13:19:22.122Z",
+    "duration": 6229,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a920ccee-6e34-40a1-9ff3-c066f5ab1fba",
+      "title": "",
+      "fullFile": "cypress\\e2e\\exercice.cy.js",
+      "file": "cypress\\e2e\\exercice.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e9e25d7d-4ff3-47ca-a1d6-cc8b0e8a1f3f",
+          "title": "Premier Exo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Connexion",
+              "fullTitle": "Premier Exo Connexion",
+              "timedOut": null,
+              "duration": 1495,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid=\"logo-img-login\"]').should(\"be.visible\");\ncy.get('[data-test=\"username-login\"]').type(\"login_user\").should(\"have.value\", \"login_user\");\ncy.get('[data-test=\"password-login\"]').type(\"cypress-geek\").should(\"have.value\", \"cypress-geek\");\ncy.get('[data-test=\"remember-login\"]').check();\ncy.get('[data-test=\"submit-login\"]').should(\"have.text\", \"Se Connecter\").click();\ncy.url().should(\"eq\", \"https://practice.automationtesteracademy.com/home\");\ncy.url().should(\"include\", \"/home\");",
+              "err": {},
+              "uuid": "f778057d-74a1-4be5-a4ce-36761774401f",
+              "parentUUID": "e9e25d7d-4ff3-47ca-a1d6-cc8b0e8a1f3f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Oublie du nom d'utilisateur",
+              "fullTitle": "Premier Exo Oublie du nom d'utilisateur",
+              "timedOut": null,
+              "duration": 785,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"password-login\"]').type(\"cyprès-geek\").should(\"have.value\", \"cyprès-geek\");\ncy.get('[data-test=\"submit-login\"]').should(\"have.text\", \"Se Connecter\").click();\ncy.get(\".error-message\").should(\"be.visible\").and(\"have.text\", \"Veuillez renseigner votre nom d'utilisateur\");",
+              "err": {},
+              "uuid": "cd377584-7dc3-4fb9-aa6f-acdb40f47f9e",
+              "parentUUID": "e9e25d7d-4ff3-47ca-a1d6-cc8b0e8a1f3f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Oublie de mot de passe",
+              "fullTitle": "Premier Exo Oublie de mot de passe",
+              "timedOut": null,
+              "duration": 667,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"username-login\"]').type(\"utilisateur_connu\").should(\"have.value\", \"utilisateur_connu\");\ncy.get('[data-test=\"submit-login\"]').should(\"have.text\", \"Se Connecter\").click();\ncy.get(\".error-message\").should(\"be.visible\").and(\"have.text\", \"Veuillez renseigner votre mot de passe\");",
+              "err": {},
+              "uuid": "53d9c0d8-9820-4f41-949f-01542aaf2173",
+              "parentUUID": "e9e25d7d-4ff3-47ca-a1d6-cc8b0e8a1f3f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mot de passe erroné",
+              "fullTitle": "Premier Exo Mot de passe erroné",
+              "timedOut": null,
+              "duration": 931,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"username-login\"]').type(\"enter_user\").should(\"have.value\", \"enter_user\");\ncy.get('[data-test=\"password-login\"]').type(\"cypr-geek\").should(\"have.value\", \"cypr-geek\");\ncy.get('[data-test=\"remember-login\"]').check();\ncy.get('[data-test=\"submit-login\"]').should(\"have.text\", \"Se Connecter\").click();\ncy.get(\".error-message\").should(\"be.visible\").and(\"have.text\", \"Veuillez vérifier votre nom d'utilisateur ou mot de passe\");",
+              "err": {},
+              "uuid": "2b149a7e-666a-4e07-99bf-cf803823755c",
+              "parentUUID": "e9e25d7d-4ff3-47ca-a1d6-cc8b0e8a1f3f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Redirection vers l'inscription",
+              "fullTitle": "Premier Exo Redirection vers l'inscription",
+              "timedOut": null,
+              "duration": 342,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid=\"text-Inscrivez-vous\"]').find('[data-testid=\"link-Inscrivez-vous\"]').click();\ncy.url().should(\"eq\", \"https://practice.automationtesteracademy.com/signup\");\ncy.url().should(\"include\", \"/signup\");",
+              "err": {},
+              "uuid": "ffc1c085-004b-4c62-b27f-50ff14a7cccb",
+              "parentUUID": "e9e25d7d-4ff3-47ca-a1d6-cc8b0e8a1f3f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f778057d-74a1-4be5-a4ce-36761774401f",
+            "cd377584-7dc3-4fb9-aa6f-acdb40f47f9e",
+            "53d9c0d8-9820-4f41-949f-01542aaf2173",
+            "2b149a7e-666a-4e07-99bf-cf803823755c",
+            "ffc1c085-004b-4c62-b27f-50ff14a7cccb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4220,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
